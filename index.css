@@ -10,13 +10,40 @@
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 } */
-.navbar{
+.navbar,.sidebar{
   display: flex;
   width: 100%;
   justify-content: space-around;
   background-color: white;
-  position: fixed;
+  /* position: fixed; */
   z-index: 1;
+}
+.sidebar{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.201);
+  backdrop-filter: blur(10px);
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 20px;
+  padding-left: 30px;
+}
+.sidebar>.right>.moon{
+  display: none;
+} 
+.right>span{
+  color:black;
+}
+.links-1{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .links, .contactus{
   display: flex;
@@ -25,7 +52,8 @@
 .links{ 
   gap: 60px;
 }
-.links > a,.right > a{
+.links > a,.right > a, .links-1>a{
+  
   text-decoration: none;
   color: black;
   font-size: 1.2rem;
@@ -462,6 +490,69 @@ gap: 50px;
   text-decoration: underline;
   transition: 0.5s ease;
 }
+
+@media (max-width:400px){
+  .links{
+    display: none;
+  }
+  .right>a, .right>img,.right-1>img{
+    display: none;
+  }
+  .right-1>a{
+    text-decoration: none;
+    color: black;
+  }
+
+  .checkbox-toggle{
+    display: none;
+  }
+  .navbar{
+    display: flex;
+    position: relative;
+  }
+  .sidebar{
+    margin-top: 87px;
+  }
+  .checkbox-toggle:checked ~ .sidebar{
+    display: flex;
+  }
+  
+}
+
+@media (min-width:401px) and (max-width:768px){
+  .links{
+    display: none;
+  }
+  .right>a, .right>img,.right-1>img{
+    display: none;
+  }
+  .right-1>a{
+    text-decoration: none;
+    color: black;
+  }
+
+  .checkbox-toggle{
+    display: none;
+  }
+  .navbar{
+    display: flex;
+    position: relative;
+  }
+  .sidebar{
+    margin-top: 87px;
+  }
+  .checkbox-toggle:checked ~ .sidebar{
+    display: flex;
+  }
+}
+@media (min-width:769px) and (max-width:1024px){
+
+}
+@media (min-width:1025px) and (max-width:1440px){
+
+}
+
+
 
 
 
